@@ -61,23 +61,56 @@ const cardAppender = (selector) => {
   axios.get(`http://localhost:5000/api/articles`)
   .then(resp =>{
     console.log(resp);
-    const cardObj1 = {
-      article: resp.data.articles.javascript
-    }
-    const cardObj2 = {
-      article: resp.data.articles.bootstrap
-    }
-    const cardObj3 = {
-      article: resp.data.articles.technology
-    }
-    const card1 = Card(cardObj1);
-    const card2 = Card(cardObj2);
-    const card3 = Card(cardObj3);
+   
+    const card1 = [resp.data.articles.javascript[0]];
+    const card2 = [resp.data.articles.javascript[1]];
+    const card3 = [resp.data.articles.javascript[2]];
+    const card4 = [resp.data.articles.javascript[3]];
+    const card5 = [resp.data.articles.bootstrap[0]];
+    const card6 = [resp.data.articles.bootstrap[1]];
+    const card7 = [resp.data.articles.bootstrap[2]];
+    const card8 = [resp.data.articles.technology[0]];
+    const card9 = [resp.data.articles.technology[1]];
+    const card10 = [resp.data.articles.technology[2]];
+    const card11 = [resp.data.articles.jquery[0]];
+    const card12 = [resp.data.articles.jquery[1]];
+    const card13 = [resp.data.articles.jquery[2]];
+    const card14 = [resp.data.articles.node[0]];
+    const card15 = [resp.data.articles.node[1]];
 
-    document.querySelector(selector).appendChild(card1);
-    document.querySelector(selector).appendChild(card2);
-    document.querySelector(selector).appendChild(card3);
 
+    const newCard1 = Card(card1);
+    const newCard2 = Card(card2);
+    const newCard3 = Card(card3);
+    const newCard4 = Card(card4);
+    const newCard5 = Card(card5);
+    const newCard6 = Card(card6);
+    const newCard7 = Card(card7);
+    const newCard8 = Card(card8);
+    const newCard9 = Card(card9);
+    const newCard10 = Card(card10);
+    const newCard11 = Card(card11);
+    const newCard12 = Card(card12);
+    const newCard13 = Card(card13);
+    const newCard14 = Card(card14);
+    const newCard15 = Card(card15);
+   
+
+    document.querySelector(selector).appendChild(newCard1);
+    document.querySelector(selector).appendChild(newCard2);
+    document.querySelector(selector).appendChild(newCard3);
+    document.querySelector(selector).appendChild(newCard4);
+    document.querySelector(selector).appendChild(newCard5);
+    document.querySelector(selector).appendChild(newCard6);
+    document.querySelector(selector).appendChild(newCard7);
+    document.querySelector(selector).appendChild(newCard8);
+    document.querySelector(selector).appendChild(newCard9);
+    document.querySelector(selector).appendChild(newCard10);
+    document.querySelector(selector).appendChild(newCard11);
+    document.querySelector(selector).appendChild(newCard12);
+    document.querySelector(selector).appendChild(newCard13);
+    document.querySelector(selector).appendChild(newCard14);
+    document.querySelector(selector).appendChild(newCard15);
   })
 }
 
