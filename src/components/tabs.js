@@ -19,19 +19,27 @@ const Tabs = (topics) => {
   const tab1 = document.createElement('div');
   const tab2 = document.createElement('div');
   const tab3 = document.createElement('div');
+  const tab4 = document.createElement('div');
+  const tab5 = document.createElement('div');
 
   topicsDiv.appendChild(tab1);
   topicsDiv.appendChild(tab2);
   topicsDiv.appendChild(tab3);
+  topicsDiv.appendChild(tab4);
+  topicsDiv.appendChild(tab5);
 
   topicsDiv.classList.add('topics');
   tab1.classList.add('tab');
   tab2.classList.add('tab');
   tab3.classList.add('tab');
+  tab4.classList.add('tab');
+  tab5.classList.add('tab');
 
   tab1.textContent = topics[0];
   tab2.textContent = topics[1];
   tab3.textContent = topics[2];
+  tab4.textContent = topics[3];
+  tab5.textContent = topics[4];
 
   return topicsDiv;
 }
@@ -47,11 +55,9 @@ const tabsAppender = (selector) => {
   axios.get('http://localhost:5000/api/topics')
   .then(resp => {
     console.log(resp);
-    // const tabsArray = [resp][data][topics][];
-    const tabsArray = {
-      topics: resp.data.topics
-    }
-    const newTabs = Tabs(tabsArray);
+    const tabsArray1 = [resp.data.topics[0], resp.data.topics[1], resp.data.topics[2], resp.data.topics[3], resp.data.topics[4]];
+
+    const newTabs = Tabs(tabsArray1);
     document.querySelector(selector).appendChild(newTabs);
   })
 
